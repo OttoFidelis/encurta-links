@@ -1,0 +1,24 @@
+{
+  "name": "encurta-links",
+  "version": "1.0.0",
+  "description": "um backend encurtador de links em typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev":"ts-node ./src/index.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "node ./dist/index"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "rimraf": "^6.0.1"
+  }
+}
