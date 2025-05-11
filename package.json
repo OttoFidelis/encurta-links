@@ -4,7 +4,7 @@
   "description": "um backend encurtador de links em typescript",
   "main": "index.js",
   "scripts": {
-    "dev":"ts-node ./src/index.ts",
+    "dev": "ts-node ./src/index.ts",
     "build": "rimraf ./dist && tsc",
     "start": "node ./dist/index"
   },
@@ -19,6 +19,7 @@
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "mongodb": "^6.16.0",
     "rimraf": "^6.0.1"
   }
 }
