@@ -1,6 +1,7 @@
 import db from "../Config/data/db";
 import Link from "../Model/link";
 import { ObjectId } from "mongodb";
+import Url from "../Model/url";
 
 export const linkRepository = {
     async getLink(id: string) {
@@ -9,9 +10,16 @@ export const linkRepository = {
     },
 
     async createLink(url: string) {
+        try{
+        const link = new Link(url)
         const database = await db();
-        const result = await database.collection("links").insertOne({ url });
+        const result = await database.collection("links").insertOne({ url:link.getUrl() });
         return new Link(url, result.insertedId);
+        }
+        catch(error){
+            if(error instanceof Error) throw new Error(error.message)
+            else throw new Error("Erro desconhecido")
+        }
     },
 
     async updateLink(id: string, url: string) {

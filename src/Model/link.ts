@@ -1,11 +1,17 @@
 import { ObjectId } from "mongodb";
+import Url from "./url";
 
 export default class Link{
-    _id?: ObjectId;
-    url: string;
+    private _id?: ObjectId;
+    private url: Url;
 
     constructor(url:string, id?:ObjectId){
-        this.url=url
+        this.url=new Url(url)
         this._id = id
     }
+
+    public getUrl():string {
+        return this.url.getUrl()
+    }
+
 }
